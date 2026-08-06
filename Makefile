@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -O2
 
-TARGET = assignment1
+TARGET = driver_CS509
 
 SRC = ~/CS509_CS1009/assignment_01/src/gemm_simple.cpp \
       ~/CS509_CS1009/assignment_01/src/gemm_blocking.cpp \

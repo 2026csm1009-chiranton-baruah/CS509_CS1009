@@ -535,13 +535,13 @@ The reported unit is **milliseconds (ms)**.
 
 ### Floyd-Warshall Results
 
-| Mode | Test File | Input Type | Input Size | Expected Output | Actual Output | Algorithm Time |
-|------|-----------|------------|------------|-----------------|---------------|----------------|
-| Single | fw_10.txt | Adjacency matrix | 10 × 10 | Distance matrix | TBD | TBD |
-| Single | fw_100.txt | Adjacency matrix | 100 × 100 | Distance matrix | TBD | TBD |
-| Single | fw_500.txt | Adjacency matrix | 500 × 500 | Distance matrix | TBD | TBD |
-| Single | fw_1000.txt | Adjacency matrix | 1000 × 1000 | Distance matrix | TBD | TBD |
-| Single | fw_2000.txt | Adjacency matrix | 2000 × 2000 | Distance matrix | TBD | TBD |
+| Mode | Test File | Input Type | Input Size | Expected Output | Algorithm Time (s) |
+|------|-----------|------------|------------|-----------------|----------------|
+| Single | fw_10.txt | Adjacency matrix | 10 × 10 | Distance matrix | 0.005 |
+| Single | fw_100.txt | Adjacency matrix | 100 × 100 | Distance matrix | 0.031 |
+| Single | fw_500.txt | Adjacency matrix | 500 × 500 | Distance matrix | 0.187 |
+| Single | fw_1000.txt | Adjacency matrix | 1000 × 1000 | Distance matrix | 0.550 |
+| Single | fw_2000.txt | Adjacency matrix | 2000 × 2000 | Distance matrix |  2.481 |
 
 ---
 

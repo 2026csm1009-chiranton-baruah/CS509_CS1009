@@ -525,23 +525,23 @@ The reported unit is **milliseconds (ms)**.
 
 ### Bellman-Ford Results
 
-| Mode | Test File | Input Type | Input Size | Expected Output | Actual Output | Algorithm Time |
-|------|-----------|------------|------------|-----------------|---------------|----------------|
-| Single | bf_10.txt | Directed weighted adjacency list → CSR | V=10, E=... | Distances / no negative cycle | TBD | TBD |
-| Single | bf_100.txt | Directed weighted adjacency list → CSR | V=100, E=... | Distances / no negative cycle | TBD | TBD |
-| Single | bf_10000.txt | Directed weighted adjacency list → CSR | V=10000, E=... | Distances / no negative cycle | TBD | TBD |
-| Single | bf_50000.txt | Directed weighted adjacency list → CSR | V=50000, E=... | Distances / no negative cycle | TBD | TBD |
-| Single | bf_100000.txt | Directed weighted adjacency list → CSR | V=100000, E=... | Distances / no negative cycle | TBD | TBD |
+| Mode | Test File | Input Type | Input Size | Expected Output | Algorithm Time (seconds) |
+|------|-----------|------------|------------|-----------------|----------------|
+| Single | bf_10.txt | Directed weighted adjacency list → CSR | V=10, E=... | Distances / no negative cycle | TBD |
+| Single | bf_100.txt | Directed weighted adjacency list → CSR | V=100, E=... | Distances / no negative cycle | TBD |
+| Single | bf_10000.txt | Directed weighted adjacency list → CSR | V=10000, E=30000 | Distances / no negative cycle | TBD |
+| Single | bf_50000.txt | Directed weighted adjacency list → CSR | V=50000, E=150000 | Distances / no negative cycle | TBD |
+| Single | bf_100000.txt | Directed weighted adjacency list → CSR | V=100000, E=300000 | Distances / no negative cycle | TBD |
 
 ### Floyd-Warshall Results
 
-| Mode | Test File | Input Type | Input Size | Expected Output | Algorithm Time (s) |
+| Mode | Test File | Input Type | Input Size | Expected Output | Algorithm Time (seconds) |
 |------|-----------|------------|------------|-----------------|----------------|
 | Single | fw_10.txt | Adjacency matrix | 10 × 10 | Distance matrix | 0.005 |
 | Single | fw_100.txt | Adjacency matrix | 100 × 100 | Distance matrix | 0.031 |
 | Single | fw_500.txt | Adjacency matrix | 500 × 500 | Distance matrix | 0.187 |
 | Single | fw_1000.txt | Adjacency matrix | 1000 × 1000 | Distance matrix | 0.550 |
-| Single | fw_2000.txt | Adjacency matrix | 2000 × 2000 | Distance matrix |  2.481 |
+| Single | fw_2000.txt | Adjacency matrix | 2000 × 2000 | Distance matrix | 2.481 |
 
 ---
 
@@ -562,7 +562,7 @@ The `tools/` directory contains optional generators:
 - `generate_bf_graph.cpp`
 - `generate_fw_matrix.cpp`
 
-These files are **not compiled by the Makefile** and are not part of the submitted algorithm build.
+These files are compiled separately and not by Makefile.
 
 ---
 

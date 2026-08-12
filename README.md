@@ -1,6 +1,6 @@
 # CS509 - PG Software Lab (Individual Assignments) Repository
 
-# CS509 – Assignment 1 (Individual Category)
+---
 
 ## Student Information
 
@@ -9,6 +9,10 @@
 - **Mode of Assignment:** Individual
 - **Name:** Chiranton Baruah
 - **Entry Number:** 2026CSM1009
+
+---
+
+# CS509 – Assignment 1 (Individual Category)
 
 ---
 

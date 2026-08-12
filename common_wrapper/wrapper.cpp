@@ -36,7 +36,7 @@ int main()
 		cout << "Enter input file path: ";
 		cin >> filename;
 #ifdef _WIN32
-		system(("~\\assignment_01\\driver\\driver.exe " + filename).c_str())
+		system(("~\\assignment_02\\driver\\driver.exe " + filename).c_str())
 #else
 		system(("./assignment_02/driver/driver " + filename).c_str());
 #endif

@@ -509,7 +509,7 @@ Timing is performed using:
 std::chrono::high_resolution_clock
 ```
 
-The reported unit is **milliseconds (ms)**.
+The reported unit is **seconds (s)**.
 
 ---
 
@@ -527,11 +527,11 @@ The reported unit is **milliseconds (ms)**.
 
 | Mode | Test File | Input Type | Input Size | Expected Output | Algorithm Time (seconds) |
 |------|-----------|------------|------------|-----------------|----------------|
-| Single | bf_10.txt | Directed weighted adjacency list → CSR | V=10, E=... | Distances / no negative cycle | TBD |
-| Single | bf_100.txt | Directed weighted adjacency list → CSR | V=100, E=... | Distances / no negative cycle | TBD |
-| Single | bf_10000.txt | Directed weighted adjacency list → CSR | V=10000, E=30000 | Distances / no negative cycle | TBD |
-| Single | bf_50000.txt | Directed weighted adjacency list → CSR | V=50000, E=150000 | Distances / no negative cycle | TBD |
-| Single | bf_100000.txt | Directed weighted adjacency list → CSR | V=100000, E=300000 | Distances / no negative cycle | TBD |
+| Single | bf_10.txt | Directed weighted adjacency list → CSR | V=10, E=40 | Distances / no negative cycle | 0.006 |
+| Single | bf_100.txt | Directed weighted adjacency list → CSR | V=100, E=2500 | Distances / no negative cycle | 0.083 |
+| Single | bf_10000.txt | Directed weighted adjacency list → CSR | V=10000, E=30000 | Distances / no negative cycle | 0.679 |
+| Single | bf_50000.txt | Directed weighted adjacency list → CSR | V=50000, E=150000 | Distances / no negative cycle | 0.991 |
+| Single | bf_100000.txt | Directed weighted adjacency list → CSR | V=100000, E=300000 | Distances / no negative cycle | 2.999 |
 
 ### Floyd-Warshall Results
 

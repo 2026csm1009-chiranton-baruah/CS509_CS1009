@@ -1,0 +1,8 @@
+
+===== Assignment 02 Driver =====
+1. Run Bellman-Ford (one file)
+2. Run Floyd-Warshall (one file)
+3. Run all Bellman-Ford tests
+4. Run all Floyd-Warshall tests
+0. Exit
+Choice: 

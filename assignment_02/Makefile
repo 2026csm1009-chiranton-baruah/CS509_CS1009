@@ -9,7 +9,7 @@ CXXFLAGS := -std=c++17 -O2 -Wall -Wextra -Iinclude
 BIN_DIR := bin
 TARGET := $(BIN_DIR)/assignment_02_driver
 
-DRIVER := driver/assignment_02_driver.cpp
+DRIVER := driver/driver.cpp
 
 # Default target
 all: $(TARGET)

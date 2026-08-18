@@ -15,6 +15,7 @@ int main()
         cout << "=====================================\n";
         cout << "1. Run Assignment 1 \n";
 		cout << "2. Run Assignment 2 \n";
+		cout << "3. Run Assignment 3 \n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -39,6 +40,15 @@ int main()
 		system(("~\\assignment_02\\driver\\driver.exe " + filename).c_str());
 #else
 		system(("./assignment_02/driver/driver " + filename).c_str());;
+#endif
+		break;
+			case 3:
+		cout << "Enter input file path: ";
+		cin >> filename;
+#ifdef _WIN32
+		system(("~\\assignment_03\\driver\\driver.exe " + filename).c_str());
+#else
+		system(("./assignment_03/driver/driver " + filename).c_str());;
 #endif
 		break;
 	    case 0:

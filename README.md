@@ -571,3 +571,170 @@ These files are compiled separately and not by Makefile.
 - CS509 Assignment 2 Specification
 - CS509 Lab Work Guidelines
 - T. H. Cormen et al., *Introduction to Algorithms* (Bellman-Ford and Floyd-Warshall)
+
+# Assignment 03 - Minimum Spanning Tree (Individual)
+
+## Assignment Mode
+
+**Individual**
+
+## Objective
+
+Implement and evaluate two Minimum Spanning Tree (MST) algorithms for weighted, undirected graphs:
+
+- **Kruskal's Algorithm**
+- **Prim's Algorithm**
+
+Both algorithms are executed on the same graph inputs and their MST results are compared. The total MST weight produced by both algorithms must match.
+
+The graph input is provided as an adjacency list and converted to **Compressed Sparse Row (CSR)** format before algorithm execution. CSR conversion is treated as preprocessing and is excluded from the reported algorithm execution time.
+
+## Algorithm / Approach
+
+### Kruskal's Algorithm
+
+Kruskal's algorithm constructs the MST by:
+
+1. Sorting all graph edges in non-decreasing order of weight.
+2. Processing the edges in sorted order.
+3. Adding an edge only when it does not form a cycle.
+4. Using a Disjoint Set Union (DSU/Union-Find) structure for cycle detection.
+5. Stopping after `V - 1` edges have been selected.
+
+**Time Complexity:** `O(E log E)`
+
+**Space Complexity:** `O(V + E)`
+
+### Prim's Algorithm
+
+Prim's algorithm constructs the MST by:
+
+1. Starting from vertex `0`.
+2. Maintaining the set of vertices already included in the MST.
+3. Repeatedly selecting the minimum-weight edge connecting the current tree to an unvisited vertex.
+4. Continuing until all vertices are included.
+
+A minimum-priority queue is used for efficient minimum-edge selection.
+
+**Time Complexity:** `O(E log V)`
+
+**Space Complexity:** `O(V + E)`
+
+## Input Format
+
+MST test files use a weighted, undirected adjacency-list representation:
+
+```text
+V E
+u0 degree neighbor1 weight1 neighbor2 weight2 ...
+u1 degree neighbor1 weight1 ...
+...
+u(V-1) degree neighbor1 weight1 ...
+```
+
+Where:
+
+- `V` = number of vertices.
+- `E` = number of undirected edges.
+- Each undirected edge appears in the adjacency list of both endpoint vertices.
+- Each edge has the same weight in both adjacency lists.
+- The graph must be connected.
+- Vertex numbering follows the `0` to `V-1` convention.
+
+The same input file is used for both Kruskal's and Prim's algorithms.
+
+## Helper Functions / CSR Conversion
+
+The adjacency-list graph is converted into **CSR (Compressed Sparse Row)** format before either MST algorithm is executed.
+
+The CSR representation consists of:
+
+- `row_ptr`
+- `col_idx`
+- Edge `values` / weights
+
+CSR conversion is preprocessing and is **not included in the reported algorithm execution time**.
+
+## File Structure
+
+```text
+assignment_03/
+├── include/
+├── driver/
+├── tests/
+│   ├── mst_10.txt
+│   ├── mst_100.txt
+│   ├── mst_10000.txt
+│   ├── mst_50000.txt
+│   └── mst_100000.txt
+├── generator/
+└── bin/
+```
+
+## Compilation
+
+From the `assignment_03` directory:
+
+```bash
+make
+```
+
+## Execution
+
+Run the Assignment 03 driver using:
+
+```bash
+make run
+```
+
+or execute the generated driver directly:
+
+```bash
+./bin/assignment_03_driver
+```
+
+The driver executes both Kruskal's and Prim's algorithms on the selected MST test graph and reports the selected MST edges, total MST weight, and algorithm execution time.
+
+## Test Cases and Result Table
+
+The Assignment 3 specification requires MST tests with **10, 100, 10,000, 50,000, and 100,000 vertices**, using the same graph files for both algorithms.
+
+| Mode | Test File | Input Type | Input Size | Expected Output | Actual Output | Kruskal Time (ms) | Prim Time (ms) |
+|------|-----------|------------|------------|-----------------|---------------|------------------:|---------------:|
+| Single | `mst_10.txt` | Weighted undirected adjacency list → CSR | V=10 | Valid MST; weight = 2613 | Kruskal = 2613, Prim = 2613 — MATCH | 0.004197 | 0.002775 |
+| Single | `mst_100.txt` | Weighted undirected adjacency list → CSR | V=100 | Valid MST; weight = 18179 | Kruskal = 18179, Prim = 18179 — MATCH | 0.024177 | 0.020100 |
+| Single | `mst_10000.txt` | Weighted undirected adjacency list → CSR | V=10,000 | Valid MST; weight = 1993206 | Kruskal = 1993206, Prim = 1993206 — MATCH | 3.300930 | 3.281290 |
+| Single | `mst_50000.txt` | Weighted undirected adjacency list → CSR | V=50,000 | Valid MST; weight = 9870550 | Kruskal = 9870550, Prim = 9870550 — MATCH | 20.620400 | 21.143200 |
+| Single | `mst_100000.txt` | Weighted undirected adjacency list → CSR | V=100,000 | Valid MST; weight = 19713150 | Kruskal = 19713150, Prim = 19713150 — MATCH | 39.781700 | 42.438400 |
+
+The recorded report shows matching MST weights for all five test cases. 
+## Correctness Check
+
+For every test case:
+
+- Both algorithms produced a valid MST.
+- The total MST weight produced by Kruskal's algorithm and Prim's algorithm was identical.
+- The driver reported **`MST weight comparison: MATCH`** for all five test cases.
+- Different MST edge sets are permitted when multiple valid MSTs exist, provided the total minimum weight is identical.
+
+## Runtime Measurement
+
+Only the **algorithm execution time** is measured.
+
+The following operations are excluded from the timed region:
+
+- Input file reading
+- Input parsing
+- Adjacency-list construction
+- Adjacency-list-to-CSR conversion
+- Output formatting
+- Output printing
+
+The timer starts immediately before the MST algorithm is called and stops immediately after the algorithm completes, as required by the Assignment 3 specification.
+
+## References
+
+1. CS509 Assignment 3 Specification
+2. CS509 Lab Work Guidelines
+3. Princeton Algorithms — Minimum Spanning Trees
+4. Standard algorithms and data-structure references for Kruskal's Algorithm, Prim's Algorithm, and Disjoint Set Union

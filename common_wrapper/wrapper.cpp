@@ -14,8 +14,8 @@ int main()
         cout << "      CS509 Common Wrapper\n";
         cout << "=====================================\n";
         cout << "1. Run Assignment 1 \n";
-		cout << "2. Run Assignment 2 \n";
-		cout << "3. Run Assignment 3 \n";
+	cout << "2. Run Assignment 2 \n";
+	cout << "3. Run Assignment 3 \n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -37,12 +37,12 @@ int main()
 		cout << "Enter input file path: ";
 		cin >> filename;
 #ifdef _WIN32
-		system(("~\\assignment_02\\driver\\driver.exe " + filename).c_str());
+		system(("~\\assignment_02\\bin\\assignment_02_driver.exe " + filename).c_str());
 #else
-		system(("./assignment_02/driver/driver " + filename).c_str());;
+		system(("./assignment_02/bin/assignment_02_driver " + filename).c_str());;
 #endif
 		break;
-			case 3:
+	case 3:
 		cout << "Enter input file path: ";
 		cin >> filename;
 #ifdef _WIN32
